@@ -10,7 +10,7 @@ jobs:
       - name: Build
         run: |
           mkdir build && cd build
-          cmake -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64" -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 ..
+          cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64" -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0 ..
           cmake --build .
           sudo make install DESTDIR=$PWD/stage
           echo "=== FILE PRODOTTI ==="
